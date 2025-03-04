@@ -9,7 +9,9 @@ wsl update.
   **1.** Activate on windows features: hyper-v, Windows Subsystem for Linux and Virtual Machine Platform
   <img src="features.png" />
 
-  **2.** Install the Ubuntu image (for other Linux versions, it could be different; it needs a GPU driver and Docker availability). I follow a <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html" target="_blank">NVIDIA tutorial</a>. On a windows terminal:
+  **2.** Install the Ubuntu image (for other Linux versions, it could be different; it needs a GPU driver and Docker availability). I followed a <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html" target="_blank">NVIDIA tutorial</a>. 
+  
+  On a windows terminal:
   ```
   wsl.exe --install
   ```
@@ -22,7 +24,8 @@ wsl update.
   ```
   wsl.exe
   ```
-  **4.** The following steps are developed inside ubuntu environment
+  **4.** The following steps were developed inside ubuntu console
+  
   Remove old key
   ```
   sudo apt-key del 7fa2af80
