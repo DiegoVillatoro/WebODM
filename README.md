@@ -45,6 +45,8 @@ wsl update.
   ```
   nvidia-smi
   ```
+  <img src="nvidia.png" />
+  
   **7.** Install <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html" target="_blank">NVIDIA Container Toolkit</a>
   ```
   curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
@@ -127,10 +129,13 @@ wsl update.
   docker run hello-world
   ```
 
-  **12.** It is almost the last step. On Windows, it is necessary to add a bridge to WSL2 to be able to open the browser launched by WSL2. I follow a <a href="https://medium.com/@petrousov/how-to-brigde-windows-subsystem-for-linux-0dc55a406a3b" target="_blank">tutorial</a>
-    - Open on windows Hyper-V menu
-    - Once inside Hyper-V, I opened the Virtual Switch Manager. This opens the menu which allows you to create virtual NIC adapters.
-    - I created an adapter called wsl-nic and connected it to my actual ethernet adapter.
+  **12.** It is almost the last step. On Windows, it is necessary to add a bridge to WSL2 to be able to open the browser launched by WSL2. I follow a <a href="https://medium.com/@petrousov/how-to-brigde-windows-subsystem-for-linux-0dc55a406a3b" target="_blank">tutorial</a> for this step.
+  
+   **-** Open on windows Hyper-V menu
+   **-** Once inside Hyper-V, I opened the Virtual Switch Manager. This opens the menu which allows you to create virtual NIC adapters.
+   **-** I created an adapter called wsl-nic and connected it to my actual ethernet adapter.
+
+   <img src="hyperv.png" />
 
   **13.** Add a <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config" target="_blank">wsl2config</a> file in C:\Users\username with next content (for wsl2 is a file .wslconfig). It is supposed that networkingMode be bridged but it was deprecated but nat mode works. vmSwitch property should be the same name that NIC adapter created in previous step. The next properties are depending on the resources available in the machine but are the variables that I need to modify to avoid the Not enough memory error on WebODM 
   ```
@@ -142,8 +147,9 @@ wsl update.
   memory=8GB
   swap=6GB
   ```
+  **14.** Reboot machine for recognize all changes.
 
-  **14.** Finally, install <a href="https://docs.opendronemap.org/installation/" target="_blank">WebODM</a>
+  **15.** Finally, install <a href="https://docs.opendronemap.org/installation/" target="_blank">WebODM</a>
   ```
   git clone https://github.com/OpenDroneMap/WebODM
   ```
@@ -154,4 +160,7 @@ wsl update.
   ```
   ./webodm.sh start --gpu
   ```
-  **15.** Open a web browser on localhost:8000 and WebODM is ready to use
+  <img src="startWebODM.png" />
+  
+  **16.** Open a web browser on localhost:8000 and WebODM is ready to use
+  <img src="WebODM.png" />
