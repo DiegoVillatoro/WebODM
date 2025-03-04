@@ -162,5 +162,10 @@ wsl update.
   ```
   <img src="startWebODM.png" />
   
-  **16.** Open a web browser on localhost:8000 and WebODM is ready to use
+  **16.** Open a web browser on <a href="localhost:8000" target="_blank">localhost:8000</a> and WebODM is ready to use
   <img src="WebODM.png" />
+
+  **17.** Some key aspects of <a href="https://docs.opendronemap.org/arguments/" target="_blank">WebODM documentation</a> that may be a little confusing when you first start using the software:
+  
+  This is just my experience working with multispectral data captured by a drone for a field crop. Due to limited computational resources and considering that I was interested in high-quality orthophotos but without 3D reconstruction, I activated the fast orthophoto and planar algorithm functions. For other cases, 3D reconstruction took too long, and my machine could not process it, and the other algorithms deformed the orthophotos, such as weird elongations (maybe with other settings or more data it could be better). In the case of radiometric calibration, the cameras provide the data as floats, which could be easier to work with (depends on each case). 
+  <img src="setup.png" />
